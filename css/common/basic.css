@@ -14,8 +14,8 @@
   --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
-  --copyright-info-color: #c03;
-  --avatar-background-color: #06c;
+  --copyright-info-color: #333;
+  --avatar-background-color: #333;
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
 }
 @media (prefers-color-scheme: light) {
@@ -35,15 +35,15 @@
     --scrollbar-color: #595967;
     --scroll-bar-bg-color: #e6e6e6;
     --link-color: #484853;
-    --copyright-info-color: #c03;
-    --avatar-background-color: #06c;
+    --copyright-info-color: #333;
+    --avatar-background-color: #333;
     --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #fff;
-    --second-background-color: #808080;
+    --second-background-color: #ccc;
     --primary-color: #ccc;
     --first-text-color: #7d7d8e;
     --second-text-color: #6c6c7c;
@@ -57,8 +57,8 @@
     --scrollbar-color: #e6e6e6;
     --scroll-bar-bg-color: #fff;
     --link-color: #5c5c6a;
-    --copyright-info-color: #a30029;
-    --avatar-background-color: #005cb8;
+    --copyright-info-color: #292929;
+    --avatar-background-color: #2e2e2e;
     --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
   }
 }
@@ -78,13 +78,13 @@
   --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
-  --copyright-info-color: #c03;
-  --avatar-background-color: #06c;
+  --copyright-info-color: #333;
+  --avatar-background-color: #333;
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
 }
 .dark-mode {
   --background-color: #fff;
-  --second-background-color: #808080;
+  --second-background-color: #ccc;
   --primary-color: #ccc;
   --first-text-color: #7d7d8e;
   --second-text-color: #6c6c7c;
@@ -98,8 +98,8 @@
   --scrollbar-color: #e6e6e6;
   --scroll-bar-bg-color: #fff;
   --link-color: #5c5c6a;
-  --copyright-info-color: #a30029;
-  --avatar-background-color: #005cb8;
+  --copyright-info-color: #292929;
+  --avatar-background-color: #2e2e2e;
   --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
 }
 .fade-in-down-animation {
