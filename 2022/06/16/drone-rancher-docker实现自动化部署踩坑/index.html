@@ -210,13 +210,39 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -v /var/lib/mysql:/var/lib/mysql --restart=unless-stopped -p 8236:8080 rancher/server</span><br></pre></td></tr></table></figure>
 
 <p>如果没有问题会执行成功，然后访问 <em>ip:8236</em></p>
-<p><img src="drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620161504985.png" alt="image-20220620161504985"></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2022/06/16/drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620170814181.png"
+                      class=""
+                >
+
 <p>先配置 <strong>系统管理</strong>—&gt;<strong>访问控制</strong> 根据流程设置管理员用户和其他配置</p>
-<p><img src="drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91.assets/image-20220620155504162-16557117051135.png" alt="image-20220620155504162-16557117051135.png"></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2022/06/16/drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620171011923.png"
+                      class="" title="image-20220620171011923"
+                >
+
+
+
 <p><strong>基础框架</strong>–&gt;<strong>添加主机</strong>根据提示添加主机</p>
-<p><img src="drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91.assets/image-20220620155417026-16557116579123.png" alt="image-20220620155417026"></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2022/06/16/drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620171026977.png"
+                      class="" title="image-20220620171026977"
+                >
+
 <p><strong>基础架构</strong>&gt;<strong>镜像库</strong>添加私有镜像库</p>
-<p><img src="drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91.assets/image-20220620155358871-16557116400622.png" alt="image-20220620155358871"></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2022/06/16/drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620171038891.png"
+                      class="" title="image-20220620171038891"
+                >
+
 <h2 id="安装Gitea"><a href="#安装Gitea" class="headerlink" title="安装Gitea"></a>安装Gitea</h2><p>使用<code>docker-compose</code>运行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker-compose -f gitea-docker-compose.yml  up -d</span><br></pre></td></tr></table></figure>
 
@@ -225,7 +251,13 @@
 
 <p>启动后，访问<code>ip:10080</code>进入安装界面进行配置。</p>
 <h2 id="安装drone"><a href="#安装drone" class="headerlink" title="安装drone"></a>安装drone</h2><p>在Gitea新建OAuth Application,参考官方文档。</p>
-<p><img src="drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91.assets/image-20220620155323729-16557116072931.png" alt="image-20220620155323729"></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2022/06/16/drone-rancher-docker%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91/image-20220620171132898.png"
+                      class="" title="image-20220620171132898"
+                >
+
 <p><font color=#dd0000 >注意！ 将生成的客户端ID和客户端密钥保存。</font></p>
 <p><code>docker-compose.yml</code>文件内容:</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">drone-server:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">drone/drone:1.2.1</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">drone-server</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">dronenet</span>        <span class="comment"># 让drone-server和drone-agent处于一个网络中，方便进行RPC通信</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;8099:80&#x27;</span>      <span class="comment"># Web管理面板的入口 PROTO=http  时使用该端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;8999:443&#x27;</span>     <span class="comment"># Web管理面板的入口 PROTO=https 时使用该端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;9000:9000&#x27;</span>    <span class="comment"># RPC服务端口</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span>   <span class="comment"># docker.sock [1]</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/lib/drone/:/var/lib/drone</span>             <span class="comment"># drone数据存放路径</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_AGENTS_ENABLED=false</span>                   <span class="comment"># 使用Runner</span></span><br><span class="line">      <span class="comment">#- DRONE_GITLAB_SERVER=$&#123;DRONE_GITLAB_SERVER&#125;</span></span><br><span class="line">      <span class="comment">#- DRONE_GITLAB_CLIENT_ID=$&#123;DRONE_GITLAB_CLIENT_ID&#125;</span></span><br><span class="line">      <span class="comment">#- DRONE_GITLAB_CLIENT_SECRET=$&#123;DRONE_GITLAB_CLIENT_SECRET&#125;</span></span><br><span class="line">      <span class="comment">#- DRONE_GITHUB_SERVER=$&#123;DRONE_GITHUB_SERVER&#125;</span></span><br><span class="line">     <span class="comment"># - DRONE_GITHUB_CLIENT_ID=$&#123;DRONE_GITHUB_CLIENT_ID&#125;</span></span><br><span class="line">     <span class="comment"># - DRONE_GITHUB_CLIENT_SECRET=$&#123;DRONE_GITHUB_CLIENT_SECRET&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_GITEA_SERVER=$&#123;DRONE_GITEA_SERVER&#125;</span>                   <span class="comment"># github的地址</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_GITEA_CLIENT_ID=$&#123;DRONE_GITEA_CLIENT_ID&#125;</span>          <span class="comment"># gitea获得的ClientID</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_GITEA_CLIENT_SECRET=$&#123;DRONE_GITEA_CLIENT_SECRET&#125;</span>  <span class="comment"># gitea获得的ClientSecret</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_RPC_SECRET=$&#123;DRONE_RPC_SECRET&#125;</span>                      <span class="comment"># RPC秘钥     [2]</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_SERVER_HOST=$&#123;DRONE_SERVER_HOST&#125;</span>                    <span class="comment"># RPC域名(在一个实例上可以不用)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_SERVER_PROTO=$&#123;DRONE_SERVER_PROTO&#125;</span>                  <span class="comment"># git webhook使用的协议(我建议http)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_OPEN=true</span>                                           <span class="comment"># 开发drone</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_DATABASE_DATASOURCE=/var/lib/drone/drone.sqlite</span>     <span class="comment"># 数据库文件</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_DATABASE_DRIVER=sqlite3</span>                             <span class="comment"># 数据库驱动，我这里选的sqlite</span></span><br><span class="line">      <span class="comment">#- DRONE_DATABASE_DRIVER=mysql</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_DEBUG=true</span>                                          <span class="comment"># 调试相关，部署的时候建议先打开</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_LOGS_DEBUG=true</span>                                     <span class="comment"># 调试相关，部署的时候建议先打开</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_LOGS_TRACE=true</span>                                     <span class="comment"># 调试相关，部署的时候建议先打开</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_USER_CREATE=username:***,admin:true</span>           <span class="comment"># 初始管理员用户 gitea用户名</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span>                                          <span class="comment"># 时区</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">  <span class="attr">drone-agent:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">drone/agent:1.2.1</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">drone-agent</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">dronenet</span>     <span class="comment"># 让drone-server和drone-agent处于一个网络中，方便进行RPC通信</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">drone-server</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span> <span class="comment"># docker.sock [1]</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_RPC_SERVER=http://drone-server</span>  <span class="comment"># RPC服务地址</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_RPC_SECRET=$&#123;DRONE_RPC_SECRET&#125;</span>  <span class="comment"># RPC秘钥  </span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_RPC_PROTO=$&#123;DRONE_RPC_PROTO&#125;</span>    <span class="comment"># RPC协议(http || https)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_RUNNER_CAPACITY=2</span>               <span class="comment"># 最大并发执行的 pipeline 数</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_DEBUG=true</span>                      <span class="comment"># 调试相关，部署的时候建议先打开</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DRONE_LOGS_TRACE=true</span>                 <span class="comment"># 调试相关，部署的时候建议先打开</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">dronenet:</span>                                     <span class="comment"># 让drone-server和drone-agent处于一个网络中，方便进行RPC通信</span></span><br></pre></td></tr></table></figure>
@@ -256,8 +288,21 @@
 <blockquote>
 <p>附件：DockerFile指令表</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/d4229cc314a94f50bbefe83bb3012336.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaW96enp6eg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/d4229cc314a94f50bbefe83bb3012336.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaW96enp6eg==,size_20,color_FFFFFF,t_70,g_se,x_16"
+                      alt="在这里插入图片描述"
+                ></p>
 <h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>​    内容还有待补充</p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><p>​    不知道为什么图片莫名其妙挂了。。。</p>
+<p>参考了下大佬的文档：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/z952957407/article/details/111642548" >https://blog.csdn.net/z952957407/article/details/111642548<i class="fas fa-external-link-alt"></i></a></p>
+<p>安装插件hexo-asset-img：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>然后重新编译一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -405,7 +450,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker"><span class="nav-text">安装docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85rancher1-x%E7%89%88%E6%9C%AC"><span class="nav-text">安装rancher1.x版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Gitea"><span class="nav-text">安装Gitea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85drone"><span class="nav-text">安装drone</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-text">最后</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker"><span class="nav-text">安装docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85rancher1-x%E7%89%88%E6%9C%AC"><span class="nav-text">安装rancher1.x版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Gitea"><span class="nav-text">安装Gitea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85drone"><span class="nav-text">安装drone</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-text">最后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-text">更新</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
